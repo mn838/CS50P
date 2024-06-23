@@ -1,0 +1,33 @@
+Exceptions
+
+exceptions - things that go wrong within our coding
+SyntaxError - those that require you to double-check that yo typed in your code correction 
+
+Runtime Errors
+    those created by unexpected behavior within your code
+    programmers must be defensive to ensure that our users are entering what we expected
+    effective strategy to fic this potential error would be to create "error handling: to ensure the user behaves as we intend
+
+`try`
+    try and except are ways of testing our user input before something goes wrong
+
+    try:
+        x = int( input( "What is X? " ) )
+    except ValueError:
+        print( "x is not an integer" )
+    
+    print( f"x is {x}" )
+
+
+`else`
+    adjust your code with else
+
+    try:
+        x = int( input( "What's x?" ) )
+    except ValueError:
+        print( "x is not an integer" )
+    else:
+        print( f"x is {x}" )
+
+Creating a Function to Get an integer
+    
