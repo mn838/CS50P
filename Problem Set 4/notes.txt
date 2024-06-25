@@ -1,0 +1,95 @@
+Libraries
+    - bits of code written by you or others you can use in your program
+    - python allows you to share functions or features with others as "modules"
+
+Random
+    - library that comes with python that you could import your own project
+    - use the word `import` in your program to load a modules
+
+    ```
+    import Random
+
+    coin = random.choice(['heads', 'tails'])
+    print(coin)
+    ```
+
+    - `from` allows us to be very specific about what we'd like to import
+
+    ```
+    from random import choice
+
+    coin = choice(['heads', 'tails'])
+    print(coin)
+    ```
+
+Statistics
+    ```
+    import statistics
+
+    print( statistics.mean( [100, 90] ) )
+    ```
+
+Command Line Arguments
+    - sys is a module that allows us to take arguments at the command line
+    - argv is a function within sys module that allows us to learn about what the user types in at the command line
+
+    ```
+    import sys
+
+    print("hello, my name is", sys.argv[1])
+    ```
+
+    - use try and except
+
+    ```
+    import sys
+
+    try:
+        print("hello, my name is", sys.argv[1])
+    except IndexError:
+        print("Too few arguments")
+    ```
+
+    - exit can be used to exit a program if an error arises
+
+Packages
+    - PyPI is a repo or directory of all available third party currently available
+    - package manager `pip` that allows you to install packages quickly into your system
+
+APIs
+    - allow you to connect to the code of others
+    - `requests` is a package that allows your program to behave as a web browser would
+
+    ```
+    import requests
+    import sys
+
+    if len(sys.argv) != 2:
+        sys.exit()
+    
+    response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
+    print(response.json())
+    ```
+
+    - built in JSON library to interpret the data received
+
+    ```
+    import json
+    import requests
+    import sys
+
+    if len(sys.argv) != 2:
+        sys.exit()
+    
+    response = requests.get("https://itunes.apple.com/search?entity=song&limit=1&term=" + sys.argv[1])
+    print(json.dumps(response.json(), indent=2))
+    ```
+
+Making Your Own Libraries
+    ```
+    def hello(name):
+        print( f'hello, {name}' )
+    
+    def goodbye(name):
+        print(f"goodbye, {name}")
+    ```
