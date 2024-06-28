@@ -1,0 +1,52 @@
+Units Tests
+    - example code
+
+    ```
+    def main( ):
+        x = int( input( "What's x? " ) )
+        print( "x is squared is", square( x ) )
+    
+    def square( n ):
+        return n * n
+    
+    if __name__ == "__main__":
+        main( )
+    ```
+
+    - new testing script
+
+    ```
+    from calculator import square
+
+    def main( ):
+        test_square( )
+    
+    def test_square( ):
+        if square( 2 ) != 4:
+            print( "2 squared was not 4" )
+        if square( 3 ) != 9:
+            print( "3 squared was not 9" )
+    
+    if __name__ == "__main__":
+        main( )
+    ```
+
+`assert`
+    - assert command allows us to tell the compiler that something, some assertion, is test_square
+
+    ```
+    from calculator import square
+    
+    def main( ):
+        test_square( )
+    
+    def test_square( ):
+        assert square( 2 ) == 4
+        assert square( 3 ) == 9
+
+    if __name__ == "__main__":
+        main( )
+    ```
+
+'pytest'
+    - third-party library that allows you to unit test your program
