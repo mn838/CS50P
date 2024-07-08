@@ -1,4 +1,4 @@
-import pytest
+import pytest # type: ignore
 from numb3rs import validate
 
 def test_true( ) -> None:
